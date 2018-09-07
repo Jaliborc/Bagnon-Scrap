@@ -1,5 +1,5 @@
 --[[
-Copyright 2008-2017 João Cardoso
+Copyright 2008-2018 João Cardoso
 Bagnon Scrap is distributed under the terms of the GNU General Public License (Version 3).
 As a special exception, the copyright holders of this addon do not give permission to
 redistribute and/or modify it.
@@ -18,14 +18,14 @@ This file is part of Bagnon Scrap.
 local Addon = Bagnon
 local ItemSlot = Addon.ItemSlot
 local UpdateBorder = ItemSlot.UpdateBorder
-local r, g, b  = GetItemQualityColor(0)
+local r, g, b = GetItemQualityColor(0)
 
 
 --[[ Ruleset ]]--
 
-Addon.Rules:New('scrap', 'Scrap', 'Interface\\Addons\\Scrap\\Art\\Enabled Box', function(player, bag, slot, bagLink, itemLink)
-	if itemLink and bag and slot then
-		return Scrap:IsJunk(tonumber(strmatch(itemLink, 'item:(%d+)')), bag, slot)
+Addon.Rules:New('scrap', 'Scrap', 'Interface\\Addons\\Scrap\\Art\\Enabled Box', function(player, bag, slot, bagInfo, itemInfo)
+	if itemInfo.id and bag and slot then
+		return Scrap:IsJunk(itemInfo.id, bag, slot)
 	end
 end)
 
@@ -33,25 +33,23 @@ end)
 --[[ Glow and Icon ]]--
 
 function ItemSlot:UpdateBorder()
-	local link = select(7, self:GetInfo())
-	if link then
-		local id = tonumber(strmatch(link, 'item:(%d+)'))
-		local bag, slot
+	local id = self.info.id
+	local online = not self.info.cached
 
-		if not self:IsCached() then
-			bag, slot = self:GetBag(), self:GetID()
-		end
-
-		if Scrap:IsJunk(id, bag, slot) then
-			self:HideBorder()
-			self:SetBorderColor(r, g, b)
-
-			return self.JunkIcon:SetShown(Scrap_Icons)
-		end
-	end
+	local bag = online and self:GetBag()
+	local slot = online and self:GetID()
+	local junk = Scrap:IsJunk(id, bag, slot)
 
 	UpdateBorder(self)
-	self.JunkIcon:Hide()
+	self.JunkIcon:SetShown(Scrap_Icons and junk)
+
+	if Scrap_Glow and junk then
+		self.IconBorder:SetVertexColor(r, g, b)
+		self.IconBorder:Show()
+
+		self.IconGlow:SetVertexColor(r, g, b, Addon.sets.glowAlpha)
+		self.IconGlow:Show()
+	end
 end
 
 
@@ -61,6 +59,6 @@ local function UpdateBags()
 	Addon:UpdateFrames()
 end
 
-hooksecurefunc(Scrap, 'SettingsUpdated', UpdateBags)
+hooksecurefunc(Scrap, 'VARIABLES_LOADED', UpdateBags)
 hooksecurefunc(Scrap, 'ToggleJunk', UpdateBags)
 Scrap.HasSpotlight = true

@@ -1,3 +1,12 @@
+##### 21
+* Updated for Bagnon and Scrap latest versions
+
+##### 20
+* Updated for Bagnon latest version
+
+##### 19
+* Updated for Battle for Azeroth
+
 ##### 18
 * Updated for Shadow of Argus
 
