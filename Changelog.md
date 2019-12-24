@@ -1,3 +1,12 @@
+##### 8.2.1
+* Updated for latest Bagnon and Scrap versions.
+
+##### 8.2.0
+* Updated for World of Warcraft patch 8.2.0.
+
+##### 8.1.0
+* Updated for World of Warcraft patch 8.1.0.
+
 ##### 21
 * Updated for Bagnon and Scrap latest versions
 

@@ -1,5 +1,5 @@
 --[[
-Copyright 2008-2018 João Cardoso
+Copyright 2008-2019 João Cardoso
 Bagnon Scrap is distributed under the terms of the GNU General Public License (Version 3).
 As a special exception, the copyright holders of this addon do not give permission to
 redistribute and/or modify it.
@@ -15,50 +15,39 @@ along with the addon. If not, see <http://www.gnu.org/licenses/gpl-3.0.txt>.
 This file is part of Bagnon Scrap.
 --]]
 
-local Addon = Bagnon
-local ItemSlot = Addon.ItemSlot
-local UpdateBorder = ItemSlot.UpdateBorder
-local r, g, b = GetItemQualityColor(0)
+local Plugin = Scrap:NewModule('Wildpants')
+local Addon = Bagnon or Combuctor
 
 
---[[ Ruleset ]]--
+--[[ API Usage ]]--
 
-Addon.Rules:New('scrap', 'Scrap', 'Interface\\Addons\\Scrap\\Art\\Enabled Box', function(player, bag, slot, bagInfo, itemInfo)
-	if itemInfo.id and bag and slot then
-		return Scrap:IsJunk(itemInfo.id, bag, slot)
+Plugin:RegisterSignal('LIST_CHANGED', function()
+	Addon.Frames:Update()
+end)
+
+Addon.Rules:New('scrap', 'Scrap', 'Interface/Addons/Scrap/art/enabled-box', function(_, bag, slot, _, item)
+	if item.id and bag and slot then
+		return Scrap:IsJunk(item.id, bag, slot)
 	end
 end)
 
 
---[[ Glow and Icon ]]--
+--[[ Extension ]]--
 
-function ItemSlot:UpdateBorder()
-	local id = self.info.id
+local UpdateBorder = Addon.Item.UpdateBorder
+local r,g,b = GetItemQualityColor(0)
+
+function Addon.Item:UpdateBorder()
 	local online = not self.info.cached
-
-	local bag = online and self:GetBag()
-	local slot = online and self:GetID()
-	local junk = Scrap:IsJunk(id, bag, slot)
+	local junk = Scrap:IsJunk(self.info.id, online and self:GetBag(), online and self:GetID())
 
 	UpdateBorder(self)
-	self.JunkIcon:SetShown(Scrap_Icons and junk)
+	self.JunkIcon:SetShown(Scrap.sets.icons and junk)
 
-	if Scrap_Glow and junk then
-		self.IconBorder:SetVertexColor(r, g, b)
+	if Scrap.sets.glow and junk then
+		self.IconBorder:SetVertexColor(r,g,b)
 		self.IconBorder:Show()
-
-		self.IconGlow:SetVertexColor(r, g, b, Addon.sets.glowAlpha)
+		self.IconGlow:SetVertexColor(r,g,b, Addon.sets.glowAlpha)
 		self.IconGlow:Show()
 	end
 end
-
-
---[[ Update Events ]]--
-
-local function UpdateBags()
-	Addon:UpdateFrames()
-end
-
-hooksecurefunc(Scrap, 'VARIABLES_LOADED', UpdateBags)
-hooksecurefunc(Scrap, 'ToggleJunk', UpdateBags)
-Scrap.HasSpotlight = true
