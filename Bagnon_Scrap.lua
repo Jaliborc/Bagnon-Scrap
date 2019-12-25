@@ -35,7 +35,7 @@ end)
 --[[ Extension ]]--
 
 local UpdateBorder = Addon.Item.UpdateBorder
-local r,g,b = GetItemQualityColor(0)
+local R,G,B = GetItemQualityColor(0)
 
 function Addon.Item:UpdateBorder()
 	local online = not self.info.cached
@@ -45,9 +45,9 @@ function Addon.Item:UpdateBorder()
 	self.JunkIcon:SetShown(Scrap.sets.icons and junk)
 
 	if Scrap.sets.glow and junk then
-		self.IconBorder:SetVertexColor(r,g,b)
+		self.IconBorder:SetVertexColor(R,G,B)
 		self.IconBorder:Show()
-		self.IconGlow:SetVertexColor(r,g,b, Addon.sets.glowAlpha)
+		self.IconGlow:SetVertexColor(R,G,B, Addon.sets.glowAlpha)
 		self.IconGlow:Show()
 	end
 end
