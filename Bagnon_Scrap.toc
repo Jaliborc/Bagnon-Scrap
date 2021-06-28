@@ -1,4 +1,4 @@
-## Interface: 11303
+## Interface: 20501
 ## Title: |cff20ff20Bagnon Scrap|r
 ## Notes: Makes your Scrap to glow
 ## Author: Jaliborc (João Cardoso)
