@@ -1,7 +1,7 @@
 ![Preview](http://jaliborc.com/images/addons/large/bagnon/scrap.jpg)
 
-[![Install](http://img.shields.io/badge/install-twitch-blueviolet)](https://www.curseforge.com/wow/addons/bagnon-scrap/files)
-[![Patreon](http://img.shields.io/badge/donate-patreon-orange)](https://www.patreon.com/jaliborc)
+[![Install](http://img.shields.io/badge/install-curseforge-484266)](https://www.curseforge.com/wow/addons/bagnon-scrap/files)
+[![Patreon](http://img.shields.io/badge/donate-patreon-ff4d42)](https://www.patreon.com/jaliborc)
 
 
 # Bagnon Scrap :moneybag:

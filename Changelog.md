@@ -1,3 +1,10 @@
+#### 10
+* Updated for Dragonflight pre-patch.
+* Added support for item border overlays.
+
+#### 9.1.0
+* Updated for Chains of Domination.
+
 #### 8.3.0
 * Updated for Visions of Nzoth.
 
