@@ -1,3 +1,10 @@
+##### 10.1.1
+* Latest build only reported compatibility with Wrath, which was incorrect.
+* New icon.
+
+#### 10.1
+* Updated for WoW patch 10.1 and the new Bagnon internal framework.
+ 
 #### 10
 * Updated for Dragonflight pre-patch.
 * Added support for item border overlays.

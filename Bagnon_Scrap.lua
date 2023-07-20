@@ -1,5 +1,5 @@
 --[[
-Copyright 2008-2022 João Cardoso
+Copyright 2008-2023 João Cardoso
 Bagnon Scrap is distributed under the terms of the GNU General Public License (Version 3).
 As a special exception, the copyright holders of this addon do not give permission to
 redistribute and/or modify it.
@@ -15,9 +15,9 @@ along with the addon. If not, see <http://www.gnu.org/licenses/gpl-3.0.txt>.
 This file is part of Bagnon Scrap.
 --]]
 
-local Plugin = Scrap:NewModule('Wildpants')
 local Addon = Bagnon or Bagnonium
 if not Addon then return end
+local Plugin = Scrap:NewModule('Bagnon')
 
 
 --[[ API Usage ]]--
@@ -39,8 +39,8 @@ local UpdateBorder = Addon.Item.UpdateBorder
 local R,G,B = GetItemQualityColor(0)
 
 function Addon.Item:UpdateBorder()
-	local online = not self.info.cached
-	local junk = Scrap:IsJunk(self.info.id, online and tonumber(self:GetBag()), online and tonumber(self:GetID()))
+	local online = not self:IsCached()
+	local junk = Scrap:IsJunk(self.info.itemID, online and tonumber(self:GetBag()), online and tonumber(self:GetID()))
 
 	UpdateBorder(self)
 	self.JunkIcon:SetShown(Scrap.sets.icons and junk)
