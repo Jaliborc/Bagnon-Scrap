@@ -1,9 +1,9 @@
-![Preview](http://jaliborc.com/images/addons/large/bagnon/scrap.jpg)
+![Preview](http://jaliborc.com/media/addons/large/scrap/bagnon.webp)
 
-[![Install](http://img.shields.io/badge/install-curseforge-484266)](https://www.curseforge.com/wow/addons/bagnon-scrap/files)
-[![Patreon](http://img.shields.io/badge/donate-patreon-ff4d42)](https://www.patreon.com/jaliborc)
-
+[![Install](http://img.shields.io/badge/install-curseforge-f16436)](https://www.curseforge.com/wow/addons/pettracker)
+[![Patreon](http://img.shields.io/badge/news-patreon-ff424d)](https://www.patreon.com/jaliborc)
+[![Community](http://img.shields.io/badge/community-discord-5865F2)](https://bit.ly/discord-jaliborc)
 
 # Bagnon Scrap :moneybag:
-Marks all junk items in [Bagnon](https://github.com/tullamods/Bagnon) panels according to [Scrap](https://github.com/Jaliborc/Scrap). Also provides a junk ruleset.
-Logically, it requires both [Bagnon](https://github.com/tullamods/Bagnon) and [Scrap](https://github.com/Jaliborc/Scrap) to work.
+Makes all your [Scrap](https://www.curseforge.com/wow/addons/scrap) glow and have coin icons in the [Bagnon](https://www.curseforge.com/wow/addons/bagnon) or [Bagnonium](https://www.curseforge.com/wow/addons/combuctor) panels.  
+Furthermore, registers a ruleset for junk items.
