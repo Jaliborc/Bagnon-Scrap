@@ -1,3 +1,6 @@
+##### 10.1.2
+* Wrath TOC update.
+
 ##### 10.1.1
 * Updated for new recommended style for Bagnon plugins in the addon list (must update Bagnon to look correct).
 * Latest build only reported compatibility with Wrath, which was incorrect.
