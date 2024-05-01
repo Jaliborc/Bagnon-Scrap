@@ -1,5 +1,5 @@
 --[[
-Copyright 2008-2023 João Cardoso
+Copyright 2008-2024 João Cardoso
 Bagnon Scrap is distributed under the terms of the GNU General Public License (Version 3).
 As a special exception, the copyright holders of this addon do not give permission to
 redistribute and/or modify it.
@@ -26,7 +26,7 @@ Plugin:RegisterSignal('LIST_CHANGED', function()
 	Addon.Frames:Update()
 end)
 
-Addon.Rules:New('scrap', 'Scrap', 'Interface/Addons/Scrap/Art/Enabled-Box', function(_, bag, slot, _, item)
+Addon.Rules:New('scrap', 'Scrap', 'interface/addons/scrap/art/scrap-big', function(_, bag, slot, _, item)
 	if item.id and bag and slot then
 		return Scrap:IsJunk(item.id, bag, slot)
 	end
