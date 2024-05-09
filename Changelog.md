@@ -1,3 +1,6 @@
+#### 10.2.1
+* Dragonflight: TOC update.
+
 ### 10.2
 * Updated for Cataclysm servers.
 
