@@ -1,3 +1,6 @@
+### 11.0
+* Updated for The War Within.
+
 #### 10.2.1
 * Dragonflight: TOC update.
 
