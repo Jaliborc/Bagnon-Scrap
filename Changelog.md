@@ -1,3 +1,6 @@
+## 11.1
+* Retail: Added support for the new addon list native grouping capabilities.
+
 ## 11.0.1
 * Updated TOC.
   
