@@ -1,3 +1,8 @@
+## 11.1.1
+* All: Added Bagnonium support.
+* All: Filter now displays its code implementation ingame as an example.
+* Retail: Updated description to match the new addon list formatting.
+
 ## 11.1
 * Retail: Added support for the new addon list native grouping capabilities.
 

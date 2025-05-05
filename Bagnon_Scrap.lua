@@ -5,20 +5,21 @@
 
 local Addon = Bagnon or Bagnonium
 if not Addon then return end
-local Plugin = Scrap:NewModule('Bagnon')
 
 
 --[[ API Usage ]]--
 
-Plugin:RegisterSignal('LIST_CHANGED', function()
+Scrap:NewModule('Bagnon'):RegisterSignal('LIST_CHANGED', function()
 	Addon.Frames:Update()
 end)
 
-Addon.Rules:New('scrap', 'Scrap', 'interface/addons/scrap/art/scrap-big', function(_, bag, slot, _, data)
-	if data.itemID and bag and slot then
-		return Scrap:IsJunk(data.itemID, bag, slot)
-	end
-end)
+Addon.Rules:Register {
+	id = 'scrap', title = 'Scrap', icon = 'interface/addons/scrap/art/scrap-big',
+	macro = [[
+		if info.itemID and bag and slot then
+			return Scrap:IsJunk(info.itemID, bag, slot)
+		end]]
+}
 
 
 --[[ Extension ]]--
