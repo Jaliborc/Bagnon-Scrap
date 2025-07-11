@@ -24,8 +24,9 @@ Addon.Rules:Register {
 
 --[[ Extension ]]--
 
-local UpdateBorder = Addon.Item.UpdateBorder
-local R,G,B = GetItemQualityColor(0)
+local C = LibStub('C_Everywhere')
+local R,G,B = C.Item.GetItemQualityColor(0)
+local UpdateBorder, UpdateGlow = Addon.Item.UpdateBorder, Addon.ContainerItem.UpdateGlow
 
 function Addon.Item:UpdateBorder()
 	local online = not self:IsCached()
@@ -43,5 +44,13 @@ function Addon.Item:UpdateBorder()
 		self.IconBorder:Show()
 	else
 		self.IconOverlay:SetDesaturated(false)
+	end
+end
+
+function Addon.ContainerItem:UpdateGlow()
+	UpdateGlow(self)
+	
+	if self.NewItemTexture:IsShown() and self.IconOverlay:IsDesaturated() then
+		self.NewItemTexture:SetAtlas('bags-glow-white')
 	end
 end

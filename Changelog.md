@@ -1,3 +1,7 @@
+## 11.1.2
+* Added support for Mists of Pandaria servers.
+* Now recolors the "new item animation" on junk items to gray.
+
 ## 11.1.1
 * All: Added Bagnonium support.
 * All: Filter now displays its code implementation ingame as an example.
