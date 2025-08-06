@@ -1,8 +1,11 @@
-## 11.1.2
+## 11.2
+* Retail: Updated for Ghosts of K'aresh update.
+
+### 11.1.2
 * Added support for Mists of Pandaria servers.
 * Now recolors the "new item animation" on junk items to gray.
 
-## 11.1.1
+### 11.1.1
 * All: Added Bagnonium support.
 * All: Filter now displays its code implementation ingame as an example.
 * Retail: Updated description to match the new addon list formatting.
@@ -10,7 +13,7 @@
 ## 11.1
 * Retail: Added support for the new addon list native grouping capabilities.
 
-## 11.0.1
+### 11.0.1
 * Updated TOC.
   
 ## 11
@@ -19,7 +22,7 @@
 ### 10.2.1
 * Dragonflight: TOC update.
 
-### 10.2
+## 10.2
 * Updated for Cataclysm servers.
 
 ### 10.1.2
