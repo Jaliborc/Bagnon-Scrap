@@ -8,7 +8,7 @@
 
 ## Dependencies: Scrap, BagBrother
 ## OptionalDeps: Bagnon, Bagnonium
-## Interface: 120001, 110207
-## Version: 11.2.3
+## Interface: 120001, 120000
+## Version: 12.0.0
 
 Bagnon_Scrap.lua
