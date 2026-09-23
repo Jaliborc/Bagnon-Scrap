@@ -30,7 +30,7 @@ local UpdateBorder, UpdateGlow = Addon.Item.UpdateBorder, Addon.ContainerItem.Up
 
 function Addon.Item:UpdateBorder()
 	local online = not self:IsCached()
-	local junk = Scrap:IsJunk(self.info.itemID, online and tonumber(self:GetBag()), online and tonumber(self:GetID()))
+	local junk = self.searched and Scrap:IsJunk(self.info.itemID, online and tonumber(self:GetBag()), online and tonumber(self:GetID()))
 
 	UpdateBorder(self)
 	self.JunkIcon:SetShown(Scrap.sets.icons and junk)
