@@ -1,3 +1,6 @@
+### 12.1.2
+* TOC Update
+
 ### 12.1.1
 * Added support for Forever.
 * Respects the new Bagnon item search design.
